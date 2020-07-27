@@ -28,12 +28,12 @@ class Installer(App):
     
     def buttonEOPKG(self, EOPKG):
         self.label.text = "Installing " + self.text.text
-        system("sudo eopkg install " + self.text.text)
+        system("gnome-terminal --command=\'bash -c \"sudo eopkg it " + self.text.text + ";$SHELL\"\'")
         print("Done!")
     
     def buttonSNAPD(self, SNAPD):
         self.label.text = "Installing " + self.text.text
-        system("sudo snap install " + self.text.text)
+        system("gnome-terminal --command=\'bash -c \"sudo snap install " + self.text.text + ";$SHELL\"\'")
         print("Done!")
 
 if __name__ == "__main__":

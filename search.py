@@ -26,11 +26,7 @@ class Search(App):
 
     def buttonClicked(self, button):
         self.label.text = "Searched Results for " + self.text.text
-        print("eopkg\n")
-        system("eopkg search " + self.text.text)
-        print("\nsnapd\n")
-        system("snap search " + self.text.text)
-        print("\n")
+        system("gnome-terminal --command=\'bash -c \"echo \"eopkg\" && eopkg search " + self.text.text + " && echo \"snapd\" && snap search " + self.text.text + ";$SHELL\"\'")
 
 try:
 
